@@ -18,6 +18,7 @@ const enhance = compose(
     data: PropTypes.array,
     xAccessor: PropTypes.func,
     yAccessor: PropTypes.func,
+    strokeWidth: PropTypes.string,
     definedAccessor: PropTypes.func,
     curveFactory: PropTypes.func,
 
@@ -31,6 +32,7 @@ const LineChart = ({
   generator,
   xAccessor = defaultXAccessor,
   yAccessor = defaultYAccessor,
+  strokeWidth = '2',
   definedAccessor = defaultDefinedAccessor,
   curveFactory = defaultCurveFactory,
   getLineProps = emptyFunction,
@@ -49,7 +51,7 @@ const LineChart = ({
       <path
         d={gen(data)}
         stroke="#EFEFEF"
-        strokeWidth="2"
+        strokeWidth={strokeWidth}
         fill="transparent"
         {...getLineProps(data)}
       />

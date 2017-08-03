@@ -13,6 +13,7 @@ const enhance = compose(
     data: PropTypes.array,
     xAccessor: PropTypes.func.isRequired,
     yAccessor: PropTypes.func.isRequired,
+    r: PropTypes.number,
   }),
 )
 
@@ -20,6 +21,7 @@ const DotChart = ({
   data = [],
   xAccessor,
   yAccessor,
+  r = 3,
   definedAccessor = defaultDefinedAccessor,
   getDotProps = emptyFunction,
   ...otherProps
@@ -34,7 +36,7 @@ const DotChart = ({
           key={`${x}, ${y}`}
           x={x}
           y={y}
-          r={3}
+          r={r}
           color="#EFEFEF"
           {...getDotProps(...args)}
         />

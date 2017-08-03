@@ -7,6 +7,7 @@ const enhance = compose(
     y: PropTypes.number,
     r: PropTypes.number,
     color: PropTypes.string,
+    strokeWidth: PropTypes.string,
   }),
   pure,
 )
@@ -16,6 +17,7 @@ const Dot = ({
   y = 0,
   r = 3,
   color = '#E6BEBC',
+  strokeWidth = '2.5',
   ...otherProps
 }) =>
   <circle
@@ -23,7 +25,7 @@ const Dot = ({
     cy={y}
     r={r}
     stroke={color}
-    strokeWidth="2.5"
+    strokeWidth={strokeWidth}
     fill="#FFFFFF"
     {...otherProps}
   />
